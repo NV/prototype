@@ -44,6 +44,8 @@ new Test.Unit.Runner({
       methodWithArguments.bind({ hi: 'withBindArgs' }, 'arg1', 'arg2')());
     this.assertEqual('withBindArgsAndArgs,arg1,arg2,arg3,arg4',
       methodWithArguments.bind({ hi: 'withBindArgsAndArgs' }, 'arg1', 'arg2')('arg3', 'arg4'));
+
+    this.assertEqual(func.toString(), func.bind({}).toString());
   },
 
   testFunctionCurry: function() {
